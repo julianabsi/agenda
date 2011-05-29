@@ -1,0 +1,34 @@
+<?php         
+$this->title = "Cadastro de Visitantes";
+$this->headTitle($this->title);
+?>
+<p><a href="<?php echo $this->url(array('controller'=>'visita', 
+        'action'=>'add'));?>">Adicionar novo</a></p>
+<table>
+    
+<tr>
+    <th>Assunto</th>
+    <th>Empresa</th>
+    <th>Endereco</th>
+    <th>Contatos</th>
+    <th>Fone</th>
+    <th>Email</th>
+    <th>&nbsp;</th>
+</tr>
+<?php foreach($this->visitas as $visita) : ?>
+<tr>
+    <td><?php echo $this->escape($visita->assunto);?></td>
+    <td><?php echo $this->escape($visita->empresa);?></td>
+    <td><?php echo $this->escape($visita->endereco);?></td>
+    <td><?php echo $this->escape($visita->contatos);?></td>
+    <td><?php echo $this->escape($visita->fone);?></td>
+    <td><?php echo $this->escape($visita->email);?></td>
+    <td>
+        <a href="<?php echo $this->url(array('controller'=>'index', 
+            'action'=>'edit', 'id'=>$visita->id));?>">Editar</a>
+        <a href="<?php echo $this->url(array('controller'=>'index', 
+            'action'=>'delete', 'id'=>$visita->id));?>">Deletar</a>
+    </td>
+</tr>
+<?php endforeach; ?>
+</table>
