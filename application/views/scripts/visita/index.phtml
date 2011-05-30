@@ -8,6 +8,8 @@ $this->headTitle($this->title);
     
 <tr>
     <th>Assunto</th>
+    <th>Data</th>
+    <th>Horario</th>
     <th>Empresa</th>
     <th>Endereco</th>
     <th>Contatos</th>
@@ -18,6 +20,8 @@ $this->headTitle($this->title);
 <?php foreach($this->visitas as $visita) : ?>
 <tr>
     <td><?php echo $this->escape($visita->assunto);?></td>
+    <td><?php echo $this->escape($visita->data);?></td>
+    <td><?php echo $this->escape($visita->horario);?></td>
     <td><?php echo $this->escape($visita->empresa);?></td>
     <td><?php echo $this->escape($visita->endereco);?></td>
     <td><?php echo $this->escape($visita->contatos);?></td>

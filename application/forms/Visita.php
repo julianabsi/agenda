@@ -17,9 +17,15 @@ class Application_Form_Visita extends Zend_Form
                 ->addFilter('StripTags')
                 ->addFilter('StringTrim')
                 ->addValidator('NotEmpty');
-        
-        $data = new Zend_Form_Element_Text('data');
+        $data = new ZendX_JQuery_Form_Element_DatePicker('data');
+        //$data = new Zend_Form_Element_Text('data');
         $data->setLabel('Data')
+                ->setRequired(true)
+                ->addFilter('StripTags')
+                ->addFilter('StringTrim')
+                ->addValidator('NotEmpty');
+        $horario = new Zend_Form_Element_Text('horario');
+        $horario->setLabel('Horario')
                 ->setRequired(true)
                 ->addFilter('StripTags')
                 ->addFilter('StringTrim')
@@ -59,13 +65,14 @@ class Application_Form_Visita extends Zend_Form
                 ->addFilter('StripTags')
                 ->addFilter('StringTrim')
                 ->addValidator('NotEmpty');
+           
                 
                 
         
         $submit = new Zend_Form_Element_Submit('submit');
         $submit->setAttrib('id', 'submitbutton');
         
-        $this->addElements(array($id, $assunto, $data, $empresa, $endereco, $contatos, $fone, $email, $submit));
+        $this->addElements(array($id, $assunto, $data, $horario, $empresa, $endereco, $contatos, $fone, $email,  $submit));
     }
 
 

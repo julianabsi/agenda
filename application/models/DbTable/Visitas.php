@@ -19,7 +19,7 @@ class Application_Model_DbTable_Visitas extends Zend_Db_Table_Abstract
 
 
 
-    public function addVisita($assunto, $data, $empresa, $endereco, $contatos, $fone, $email)
+    public function addVisita($assunto, $data, $empresa, $endereco, $contatos, $fone, $email, $horario)
     {
         $data = array(
             'assunto'=> $assunto,
@@ -29,6 +29,7 @@ class Application_Model_DbTable_Visitas extends Zend_Db_Table_Abstract
             'contatos' => $contatos,
             'fone'     => $fone,
             'email'    => $email,
+            'horario'  => $horario
             
         );
         $this->insert($data);
