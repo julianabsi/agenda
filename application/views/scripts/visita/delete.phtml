@@ -1,0 +1,17 @@
+<?php
+
+$this->titel = "Deletar";
+$this->headTitle($this->title);
+?>
+
+<p>Tem certeza que deseja deletar essa visita?
+'<?php echo $this->escape($this->visita['assunto']); ?>'<br />  Empresa:
+'<?php echo $this->escape($this->visita['empresa']); ?>' ?
+</p>
+<form action="<?php echo $this->url(array('action' => 'delete')); ?>" method="post">
+    <div>
+        <input type="hidden" name="id" value="<?php echo $this->visita['id']; ?>" />
+        <input type="submit" name="del" value="Yes" />
+        <input type="submit" name="del" value="No" />
+    </div>
+</form>

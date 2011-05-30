@@ -40,7 +40,7 @@ class Application_Form_Visita extends Zend_Form
                 ->addValidator('NotEmpty');
             
           $contatos = new Zend_Form_Element_Text('contatos');
-          $contatos->setLabel('Endereco')
+          $contatos->setLabel('Contatos')
                 ->setRequired(true)
                 ->addFilter('StripTags')
                 ->addFilter('StringTrim')
