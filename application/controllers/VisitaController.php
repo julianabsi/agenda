@@ -64,7 +64,7 @@ class VisitaController extends Zend_Controller_Action
                 $email    = $form->getValue('email');
                 
                 $visitas = new Application_Model_DbTable_Visitas();
-                $visitas->update($id,$assunto, $data, $empresa, $endereco, $contatos, $fone, $email);
+                $visitas->update($id,$assunto, $data, $horario,  $endereco, $contatos, $fone, $email);
                 
                 $this->_helper->redirector('index');
                 

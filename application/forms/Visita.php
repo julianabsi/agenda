@@ -17,9 +17,13 @@ class Application_Form_Visita extends Zend_Form
                 ->addFilter('StripTags')
                 ->addFilter('StringTrim')
                 ->addValidator('NotEmpty');
-        $data = new ZendX_JQuery_Form_Element_DatePicker('data');
+        
+                
+        
+        $data = new Zend_Dojo_Form_Element_DateTextBox('data');
+        $data->setLabel('data')
         //$data = new Zend_Form_Element_Text('data');
-        $data->setLabel('Data')
+        //$data->setLabel('Data')
                 ->setRequired(true)
                 ->addFilter('StripTags')
                 ->addFilter('StringTrim')
