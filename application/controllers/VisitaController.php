@@ -55,9 +55,10 @@ class VisitaController extends Zend_Controller_Action
             $formData = $this->getRequest()->getPost();
             if($form->isValid($formData)){
                 $id = (int)$form->getValue('id');
-                $assunto = $form->getValue('assunto');
-                $data = $form->getValue('data');
-                $empresa = $form->getValue('empresa');
+                $assunto =  $form->getValue('assunto');
+                $data =     $form->getValue('data');
+                $horario = $form->getValue('horario');
+                $empresa =  $form->getValue('empresa');
                 $endereco = $form->getValue('endereco');
                 $contatos = $form->getValue('contatos');
                 $fone     = $form->getValue('fone');
