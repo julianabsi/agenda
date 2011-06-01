@@ -19,27 +19,29 @@ class Application_Model_DbTable_Visitas extends Zend_Db_Table_Abstract
 
 
 
-    public function addVisita($assunto, $data, $empresa, $endereco, $contatos, $fone, $email, $horario)
+    public function addVisita($assunto, $data, $horario, $empresa, $endereco, $contatos, $fone, $email,$horario )
     {
         $data = array(
-            'assunto'=> $assunto,
-            'data'   => $data,
-            'empresa'=> $empresa,
+            'assunto' => $assunto,
+            'data'    => $data,            
+            'empresa' => $empresa,
             'endereco' => $endereco,
             'contatos' => $contatos,
             'fone'     => $fone,
             'email'    => $email,
-            'horario'  => $horario
+            'horario' => $horario,
+           
             
         );
         $this->insert($data);
     }
     
-    public function updateVisita($id, $assunto, $data, $empresa, $endereco, $contato, $fone, $email)
+    public function updateVisita($id, $assunto, $data, $horario, $empresa, $endereco, $contato, $fone, $email)
     {
         $data = array(
              'assunto'=> $assunto,
             'data'   => $data,
+            'horario' => $horario,
             'empresa'=> $empresa,
             'endereco' => $endereco,
             'contatos' => $contatos,

@@ -33,8 +33,9 @@ class VisitaController extends Zend_Controller_Action
                 $contatos = $form->getValue('contatos');
                 $fone     = $form->getValue('fone');
                 $email    = $form->getValue('email');
+                $horario = $form->getValue('horario');
                 $visitas = new Application_Model_DbTable_Visitas();
-                $visitas->addVisita($assunto, $data, $empresa, $endereco, $contatos, $fone, $email);
+                $visitas->addVisita($assunto, $data, $empresa, $endereco, $contatos, $fone, $email, $horario);
                 
                 $this->_helper->redirector('index');
             } else {
@@ -54,10 +55,10 @@ class VisitaController extends Zend_Controller_Action
         if ($this->getRequest()->isPost()){
             $formData = $this->getRequest()->getPost();
             if($form->isValid($formData)){
-                $id = (int)$form->getValue('id');
+                $id =  (int)$form->getValue('id');
                 $assunto =  $form->getValue('assunto');
                 $data =     $form->getValue('data');
-                $horario = $form->getValue('horario');
+                $horario =  $form->getValue('horario');
                 $empresa =  $form->getValue('empresa');
                 $endereco = $form->getValue('endereco');
                 $contatos = $form->getValue('contatos');
@@ -65,7 +66,7 @@ class VisitaController extends Zend_Controller_Action
                 $email    = $form->getValue('email');
                 
                 $visitas = new Application_Model_DbTable_Visitas();
-                $visitas->update($id,$assunto, $data, $horario,  $endereco, $contatos, $fone, $email);
+                $visitas->update($id, $assunto, $data, $horario,  $endereco, $contatos, $fone, $email);
                 
                 $this->_helper->redirector('index');
                 
